@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const MessageForm = () => {
     const [formData, setFormData] = useState({
-        id: '',
+        // id: '',
         to: '',
         content: '',
         from: ''
@@ -26,10 +26,11 @@ const MessageForm = () => {
     };
     return (
         <form onSubmit={handleSubmit}>
-            <div>
+            {/* <div>
                 <label>ID: </label>
                 <input type="text" name="id" value={formData.id} onChange={handleChange} required />
-            </div>
+            </div> */}
+            
             <div>
                 <label>To: </label>
                 <input type="text" name="to" value={formData.to} onChange={handleChange} required />

@@ -3,7 +3,7 @@ import MessageAccessor from "../db_accessor/message.accessor";
 export default class MessageController {
     static async getMessageById(req, res) {
         try {
-            const m_id = req.params.id;
+            const m_id = req.params._id;
             const message = await MessageAccessor.getMessage(m_id);
             res.json(message);
         } catch (e) {throw e;}
@@ -23,7 +23,7 @@ export default class MessageController {
 
     static async replaceMessage(req, res) {
         try {
-            const m_id = req.params.id;
+            const m_id = req.params._id;
             const updated_vals = req.body;
             const updated_msg = await MessageAccessor.replaceMessage(m_id, updated_vals);
             res.json(updated_msg);
@@ -36,7 +36,7 @@ export default class MessageController {
 
     static async updateMessage(req,res) {
         try {
-            const m_id = req.params.id;
+            const m_id = req.params._id;
             const updated_val = req.body;
             const updated_msg = await MessageAccessor.updateMessage(m_id, updated_val);
             res.json(updated_msg);
@@ -48,7 +48,7 @@ export default class MessageController {
 
     static async deleteMessage(req, res) {
         try {
-            const m_id = req.params.id;
+            const m_id = req.params._id;
             const deletion = await MessageAccessor.deleteMessage(m_id);
             res.direct("/");
             

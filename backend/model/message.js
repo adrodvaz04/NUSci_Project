@@ -5,7 +5,7 @@ import mongoose, { mongo, Schema } from "mongoose";
 const Schema = mongoose.Schema;
 const messageSchema = new Schema(
     {
-        id: {type: Number, required: true},
+        // id: {type: Number, required: true},
         from: {type: String, required: true},
         content: {type: String, required: true},
         to: {type: String, required: true}
