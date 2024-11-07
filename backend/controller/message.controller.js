@@ -56,4 +56,12 @@ export default class MessageController {
             console.log("Failed due to:", e);
         }
     }
+
+    static async getMessages(req, res) {
+        try {
+            const messages = await MessageAccessor.getMessages();
+        } catch (e) {
+            console.log("Failed:", e);
+        }
+    }
 }

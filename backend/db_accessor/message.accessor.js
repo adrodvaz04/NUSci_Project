@@ -52,4 +52,13 @@ export default class MessageAccessor {
         }
     }
 
+    static async getMessages() {
+        try {
+            await Connection.open("teaching_proj");
+            const messages = await Message.find();
+        } catch (e) {
+            console.log("Error:", e)
+        }
+    }
+
 }

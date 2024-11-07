@@ -4,6 +4,8 @@ import path from "path";
 
 const router = express.Router(); 
 
+
+router.route("/messages").get(MessageController.getMessages);
 router.route("/message/:id").get(MessageController.getMessageById);
 router.route("/create-message").post(MessageController.postNewMessage);
 router.put("/replace-message/:id", MessageController.replaceMessage);
