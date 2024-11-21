@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import NewMessageForm from './components/MessageForm.js';
+import MessageForm from './components/MessageForm.js';
 import DisplayAllMessages from './components/DisplayAllMessages.js';
 import './App.css';
 
@@ -12,11 +12,11 @@ function App() {
                 <Link to = "/"> Home!!!!!!!!!!!!!!!!</Link>
             </nav>
             <Routes>
-                <Route path = "/create-message" element = { <NewMessageForm /> } />
+                <Route path = "/create-message" element = { <MessageForm /> } />
                 <Route path = "/" element = {<DisplayAllMessages />} />
             </Routes>
         </Router>
-    )
+    );
 }
 
 export default App;

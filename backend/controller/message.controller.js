@@ -60,6 +60,8 @@ export default class MessageController {
     static async getMessages(req, res) {
         try {
             const messages = await MessageAccessor.getMessages();
+            res.json(messages);
+            return messages;
         } catch (e) {
             console.log("Failed:", e);
         }

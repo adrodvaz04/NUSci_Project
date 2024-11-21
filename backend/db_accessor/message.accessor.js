@@ -12,9 +12,9 @@ export default class MessageAccessor {
 
     static async createMessage(messageInfo) {
         try {
-            await Connection.open("teaching-proj");
+            await Connection.open("teaching_proj");
             const msge = await Message.create(messageInfo);
-
+            return msge;
         } catch (e) {
             console.log("Failed");
         }
@@ -22,7 +22,7 @@ export default class MessageAccessor {
 
     static async replaceMessage(msge_id, updatedInfo) {
         try {
-            await Connection.open("teaching-pro");
+            await Connection.open("teaching_proj");
             const msge = await Message.findOneAndReplace({_id: msge_id}, updatedInfo, {new: true, runValidators: true})
             return msge;
         } catch (e) {
@@ -33,8 +33,8 @@ export default class MessageAccessor {
 
     static async updateMessage(msge_id, updatedInfo) {
         try {
-            await Connection.open("teaching-proj");
-            const msge = await Message.findOneAndUpdate({_id: msge_id}, {$set: updatedInfo}, {new:true, runValidators:true});
+            await Connection.open("teaching_proj");
+            const msge = await Message.findOneAndUpdate({_id: msge_id}, { $set: updatedInfo }, { new:true, runValidators:true });
             return msge;
         } catch (e) {
             console.log("Failed due to:", e);
@@ -46,7 +46,7 @@ export default class MessageAccessor {
         try {
             await Connection.open("teaching_proj");
             const msge = await Message.findOneAndDelete({_id : msge_id});
-            return msge
+            return msge;
         } catch (e) {
             console.log("Failed due to", e)
         }
@@ -56,6 +56,7 @@ export default class MessageAccessor {
         try {
             await Connection.open("teaching_proj");
             const messages = await Message.find();
+            return messages;
         } catch (e) {
             console.log("Error:", e)
         }

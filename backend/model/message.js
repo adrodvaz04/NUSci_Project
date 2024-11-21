@@ -3,7 +3,7 @@
 import mongoose, { mongo, Schema } from "mongoose";
 
 const Schema = mongoose.Schema;
-const messageSchema = new Schema(
+const MessageSchema = new Schema(
     {
         // id: {type: Number, required: true},
         from: {type: String, required: true},
@@ -17,6 +17,6 @@ const messageSchema = new Schema(
 );
 
 const db = mongoose.connection.useDb("teaching_proj");
-const Message = db.model("Message", messageSchema)
+const Message = db.model("Message", MessageSchema)
 
 export default Message;

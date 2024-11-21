@@ -20,6 +20,13 @@ const MessageForm = () => {
                 headers: { 'Content-Type' : 'application/json' },
                 body: JSON.stringify(formData)
             });
+
+            if (response.ok) {
+                setFormData({ to: '', content: '', from: ''});
+            } else {
+                const err = await response.json();
+                console.log(err);
+            }
         } catch (error) {
             console.log(error);
         } 
