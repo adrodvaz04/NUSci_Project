@@ -9,7 +9,7 @@ export default class Connection {
             DATABASE_URL = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_CLUSTER}.xtdufxk.mongodb.net/?retryWrites=true&w=majority&appName=nusci-cluster`;
             mongoose.connect(DATABASE_URL, {
                 maxPoolSize: 50,
-                socketTimeoutMS: 2500,
+                socketTimeoutMS: 2500000,
                 dbName: db
             });
             return mongoose.connection;

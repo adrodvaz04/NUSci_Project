@@ -1,4 +1,4 @@
-import MessageAccessor from "../db_accessor/message.accessor";
+import MessageAccessor from "../db_accessor/message.accessor.js";
 
 export default class MessageController {
     static async getMessageById(req, res) {

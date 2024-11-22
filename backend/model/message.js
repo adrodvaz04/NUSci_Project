@@ -1,6 +1,6 @@
 // messages contain id, content, to, from
 // schema validation with mongoose
-import mongoose, { mongo, Schema } from "mongoose";
+import mongoose, { mongo } from "mongoose";
 
 const Schema = mongoose.Schema;
 const MessageSchema = new Schema(

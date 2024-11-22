@@ -27,7 +27,7 @@ app.use(helmet({
 }));
 
 app.use(express.json())
-app.use(bodyParser.urlEncoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use("/", router);
 
